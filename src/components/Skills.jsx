@@ -1,109 +1,116 @@
 const Skills = () => {
     const frontendSkills = [
-        { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-        { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-        { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-        { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-        { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
+        { name: 'HTML5', icon: 'fab fa-html5', color: 'text-orange-500' },
+        { name: 'CSS3', icon: 'fab fa-css3-alt', color: 'text-blue-500' },
+        { name: 'JavaScript', icon: 'fab fa-js', color: 'text-yellow-400' },
+        { name: 'React', icon: 'fab fa-react', color: 'text-blue-400' },
+        { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg', isImage: true },
     ]
 
     const backendSkills = [
-        { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-        { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-        { name: 'Pandas', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
-        { name: 'NumPy', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
+        { name: 'Python', icon: 'fab fa-python', color: 'text-blue-500' },
+        { name: 'MySQL', icon: 'fas fa-database', color: 'text-blue-600' },
+        { name: 'Pandas', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg', isImage: true },
+        { name: 'NumPy', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg', isImage: true },
     ]
 
     return (
-        <section id="skills" className="py-8 px-4">
-            <div className="max-w-7xl mx-auto">
-                {/* Enhanced Heading */}
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-purple-800 dark:from-purple-400 dark:to-purple-200 bg-clip-text text-transparent mb-3">
-                        Technical Skills
+        <section id="skills" className="py-20 px-4 relative overflow-hidden">
+            <div className="max-w-6xl mx-auto relative z-10">
+                {/* Header */}
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                        <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                            Technical Skills
+                        </span>
                     </h2>
-                    <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto rounded-full mb-2"></div>
-                    <p className="text-gray-600 dark:text-gray-400">Technologies and tools I work with</p>
+                    <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 mx-auto rounded-full mb-4"></div>
+                    <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        A comprehensive toolkit of technologies and methodologies I use to build impactful solutions.
+                    </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    {/* Frontend Development */}
-                    <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg border border-white/30 dark:border-gray-700/50 rounded-2xl shadow-lg p-6">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 rounded-2xl flex items-center justify-center">
-                                <i className="fas fa-code text-xl text-purple-600 dark:text-purple-400"></i>
-                            </div>
-                            <h3 className="text-2xl font-bold text-gray-800 dark:text-white">Frontend Development</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {/* Frontend */}
+                    <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl border border-white/20 dark:border-gray-700 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                        <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-6 text-purple-600 dark:text-purple-400">
+                            <i className="fas fa-code text-xl"></i>
                         </div>
-
-                        <div className="flex flex-wrap gap-3 justify-center">
+                        <h3 className="text-xl font-bold mb-6 text-gray-800 dark:text-white">Frontend Development</h3>
+                        <div className="flex flex-wrap gap-3">
                             {frontendSkills.map((skill) => (
-                                <div key={skill.name} className="tech-tag bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 hover:scale-105">
-                                    <img src={skill.icon} className="w-4 h-4 mr-2 inline" alt={skill.name} />
-                                    {skill.name}
+                                <div key={skill.name} className="flex items-center gap-2 px-3 py-2 bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600 rounded-lg text-sm font-medium hover:bg-white dark:hover:bg-gray-700 hover:shadow-md transition-all duration-300">
+                                    {skill.isImage ? (
+                                        <img src={skill.icon} alt={skill.name} className="w-5 h-5" />
+                                    ) : (
+                                        <i className={`${skill.icon} ${skill.color} text-lg`}></i>
+                                    )}
+                                    <span className="text-gray-700 dark:text-gray-300">{skill.name}</span>
                                 </div>
                             ))}
-                            <div className="tech-tag bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 hover:scale-105">
-                                <i className="fas fa-gem text-red-500 mr-2 text-xs"></i>
-                                Ruby on Rails
+                            <div className="flex items-center gap-2 px-3 py-2 bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600 rounded-lg text-sm font-medium hover:bg-white dark:hover:bg-gray-700 hover:shadow-md transition-all duration-300">
+                                <i className="fas fa-gem text-red-500 text-lg"></i>
+                                <span className="text-gray-700 dark:text-gray-300">Ruby on Rails</span>
                             </div>
                         </div>
                     </div>
 
-                    {/* Backend & Data Analytics */}
-                    <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg border border-white/30 dark:border-gray-700/50 rounded-2xl shadow-lg p-6">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-blue-100 dark:from-green-900/30 dark:to-blue-900/30 rounded-2xl flex items-center justify-center">
-                                <i className="fas fa-database text-xl text-purple-600 dark:text-purple-400"></i>
-                            </div>
-                            <h3 className="text-2xl font-bold text-gray-800 dark:text-white">Backend & Data Analytics</h3>
+                    {/* Backend & Data */}
+                    <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl border border-white/20 dark:border-gray-700 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                        <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400">
+                            <i className="fas fa-database text-xl"></i>
                         </div>
-
-                        <div className="flex flex-wrap gap-3 justify-center">
+                        <h3 className="text-xl font-bold mb-6 text-gray-800 dark:text-white">Backend & Data</h3>
+                        <div className="flex flex-wrap gap-3">
                             {backendSkills.map((skill) => (
-                                <div key={skill.name} className="tech-tag bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 hover:scale-105">
-                                    <img src={skill.icon} className="w-4 h-4 mr-2 inline" alt={skill.name} />
-                                    {skill.name}
+                                <div key={skill.name} className="flex items-center gap-2 px-3 py-2 bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600 rounded-lg text-sm font-medium hover:bg-white dark:hover:bg-gray-700 hover:shadow-md transition-all duration-300">
+                                    {skill.isImage ? (
+                                        <img src={skill.icon} alt={skill.name} className="w-5 h-5" />
+                                    ) : (
+                                        <i className={`${skill.icon} ${skill.color} text-lg`}></i>
+                                    )}
+                                    <span className="text-gray-700 dark:text-gray-300">{skill.name}</span>
                                 </div>
                             ))}
-                            <div className="tech-tag bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 hover:scale-105">
-                                <i className="fas fa-chart-bar text-purple-600 mr-2 text-xs"></i>
-                                Tableau
+                            {/* Tableau - Image */}
+                            <div className="flex items-center gap-2 px-3 py-2 bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600 rounded-lg text-sm font-medium hover:bg-white dark:hover:bg-gray-700 hover:shadow-md transition-all duration-300">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tableau/tableau-original.svg" alt="Tableau" className="w-5 h-5" />
+                                <span className="text-gray-700 dark:text-gray-300">Tableau</span>
                             </div>
-                            <div className="tech-tag bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 hover:scale-105">
-                                <i className="fas fa-shield-alt text-green-600 mr-2 text-xs"></i>
-                                Cybersecurity
+                            <div className="flex items-center gap-2 px-3 py-2 bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600 rounded-lg text-sm font-medium hover:bg-white dark:hover:bg-gray-700 hover:shadow-md transition-all duration-300">
+                                <i className="fas fa-shield-alt text-green-500 text-lg"></i>
+                                <span className="text-gray-700 dark:text-gray-300">Cybersecurity</span>
                             </div>
                         </div>
                     </div>
 
-                    {/* Tools & Technologies */}
-                    <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg border border-white/30 dark:border-gray-700/50 rounded-2xl shadow-lg p-6">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 rounded-2xl flex items-center justify-center">
-                                <i className="fas fa-tools text-xl text-purple-600 dark:text-purple-400"></i>
-                            </div>
-                            <h3 className="text-2xl font-bold text-gray-800 dark:text-white">Tools & Technologies</h3>
+                    {/* Tools */}
+                    <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl border border-white/20 dark:border-gray-700 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                        <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center mb-6 text-green-600 dark:text-green-400">
+                            <i className="fas fa-tools text-xl"></i>
                         </div>
-
-                        <div className="flex flex-wrap gap-3 justify-center">
-                            <div className="tech-tag bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 hover:scale-105">
-                                <i className="fab fa-git-alt mr-2 text-xs"></i>Git & GitHub
+                        <h3 className="text-xl font-bold mb-6 text-gray-800 dark:text-white">Tools & Tech</h3>
+                        <div className="flex flex-wrap gap-3">
+                            <div className="flex items-center gap-2 px-3 py-2 bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600 rounded-lg text-sm font-medium hover:bg-white dark:hover:bg-gray-700 hover:shadow-md transition-all duration-300">
+                                <i className="fab fa-git-alt text-red-500 text-lg"></i>
+                                <span className="text-gray-700 dark:text-gray-300">Git & GitHub</span>
                             </div>
-                            <div className="tech-tag bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 hover:scale-105">
-                                <i className="fab fa-docker mr-2 text-xs"></i>Docker
+                            {/* Docker - Image */}
+                            <div className="flex items-center gap-2 px-3 py-2 bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600 rounded-lg text-sm font-medium hover:bg-white dark:hover:bg-gray-700 hover:shadow-md transition-all duration-300">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" className="w-5 h-5" />
+                                <span className="text-gray-700 dark:text-gray-300">Docker</span>
                             </div>
-                            <div className="tech-tag bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 hover:scale-105">
-                                <i className="fas fa-terminal mr-2 text-xs"></i>Linux/Unix
+                            <div className="flex items-center gap-2 px-3 py-2 bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600 rounded-lg text-sm font-medium hover:bg-white dark:hover:bg-gray-700 hover:shadow-md transition-all duration-300">
+                                <i className="fas fa-terminal text-gray-500 text-lg"></i>
+                                <span className="text-gray-700 dark:text-gray-300">Linux/Unix</span>
                             </div>
-                            <div className="tech-tag bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 hover:scale-105">
-                                <i className="fas fa-cloud mr-2 text-xs"></i>AWS
+                            <div className="flex items-center gap-2 px-3 py-2 bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600 rounded-lg text-sm font-medium hover:bg-white dark:hover:bg-gray-700 hover:shadow-md transition-all duration-300">
+                                <i className="fab fa-aws text-orange-500 text-lg"></i>
+                                <span className="text-gray-700 dark:text-gray-300">AWS</span>
                             </div>
-                            <div className="tech-tag bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 hover:scale-105">
-                                <i className="fas fa-server mr-2 text-xs"></i>REST APIs
-                            </div>
-                            <div className="tech-tag bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 hover:scale-105">
-                                <i className="fas fa-mobile-alt mr-2 text-xs"></i>Responsive Design
+                            <div className="flex items-center gap-2 px-3 py-2 bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600 rounded-lg text-sm font-medium hover:bg-white dark:hover:bg-gray-700 hover:shadow-md transition-all duration-300">
+                                <i className="fas fa-server text-blue-400 text-lg"></i>
+                                <span className="text-gray-700 dark:text-gray-300">REST APIs</span>
                             </div>
                         </div>
                     </div>

@@ -17,18 +17,18 @@ function App() {
         const savedMode = localStorage.getItem('darkMode')
         if (savedMode === 'true') {
             setDarkMode(true)
-            document.documentElement.classList.add('dark')
+            document.body.classList.add('dark')
         }
     }, [])
 
     const toggleDarkMode = () => {
         setDarkMode(!darkMode)
-        document.documentElement.classList.toggle('dark')
+        document.body.classList.toggle('dark')
         localStorage.setItem('darkMode', !darkMode)
     }
 
     return (
-        <div className="bg-gradient-to-br from-white to-purple-50 dark:from-black dark:to-purple-950 text-gray-900 dark:text-white transition duration-500">
+        <div className="app-container">
             <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
             <Hero />
             <About />
