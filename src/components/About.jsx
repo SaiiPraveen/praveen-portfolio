@@ -41,7 +41,7 @@ const About = () => {
                                     </div>
                                     <div className="info-text">
                                         <h4>Location</h4>
-                                        <p>Visakhapatnam, India</p>
+                                        <p>pasarlapudi, Andhra Pradesh, India</p>
                                     </div>
                                 </div>
                             </div>

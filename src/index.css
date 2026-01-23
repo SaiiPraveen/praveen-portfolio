@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Base Styles & Reset */
 * {
     margin: 0;
@@ -1012,6 +1016,7 @@ body.dark .certificate-card {
     transform: scale(0.8);
     display: none;
 }
+
 /* Internships, Projects, Certifications, Contact, Footer Sections */
 
 /* Common grid layouts */
