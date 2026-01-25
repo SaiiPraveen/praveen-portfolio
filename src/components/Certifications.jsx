@@ -16,9 +16,9 @@ const Certifications = () => {
             date: '2024',
             link: 'https://github.com/saipraveen13/Predict2Protect_hackthon',
             techStack: [
-                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-                'https://upload.wikimedia.org/wikipedia/commons/8/8b/Scikit_learn_logo_small.svg',
-                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg'
+                { type: 'icon', value: 'devicon-python-plain colored' },
+                { type: 'icon', value: 'devicon-scikitlearn-plain colored' },
+                { type: 'icon', value: 'devicon-pandas-plain colored' }
             ]
         },
         {
@@ -32,9 +32,9 @@ const Certifications = () => {
             date: '2024',
             link: 'https://github.com/saipraveen13/HACKATHON-FULL-STACK',
             techStack: [
-                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg'
+                { type: 'icon', value: 'devicon-react-original colored' },
+                { type: 'icon', value: 'devicon-nodejs-plain colored' },
+                { type: 'icon', value: 'devicon-mongodb-plain colored' }
             ]
         },
         {
@@ -48,8 +48,8 @@ const Certifications = () => {
             date: '2024',
             link: 'https://github.com/saipraveen13/HACKATHON-TechGig-',
             techStack: [
-                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg'
+                { type: 'icon', value: 'devicon-python-plain colored' },
+                { type: 'icon', value: 'devicon-jupyter-plain colored' }
             ]
         },
         {
@@ -63,8 +63,8 @@ const Certifications = () => {
             date: '2024',
             link: 'https://github.com/saipraveen13/HACKATHON-VinShik-',
             techStack: [
-                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
+                { type: 'icon', value: 'devicon-html5-plain colored' },
+                { type: 'icon', value: 'devicon-css3-plain colored' }
             ]
         },
         {
@@ -78,8 +78,8 @@ const Certifications = () => {
             date: '2024',
             link: 'https://github.com/saipraveen13/HACKATHON-CodeSpark-',
             techStack: [
-                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-                'https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg'
+                { type: 'icon', value: 'devicon-python-plain colored' },
+                { type: 'img', value: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg' }
             ]
         },
 
@@ -95,8 +95,8 @@ const Certifications = () => {
             date: '2024',
             link: 'https://github.com/saipraveen13/BOOTCAMPS',
             techStack: [
-                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
-                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg'
+                { type: 'icon', value: 'devicon-vscode-plain colored' },
+                { type: 'icon', value: 'devicon-git-plain colored' }
             ]
         },
         {
@@ -110,7 +110,7 @@ const Certifications = () => {
             date: '2023-2024',
             link: 'https://github.com/saipraveen13/WORKSHOPS',
             techStack: [
-                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg'
+                { type: 'icon', value: 'devicon-github-original' }
             ]
         },
     ]
@@ -120,14 +120,16 @@ const Certifications = () => {
         : certificates.filter(cert => cert.category === filter)
 
     return (
-        <section id="certificates" className="py-20 px-4">
-            <div className="max-w-7xl mx-auto">
+        <section id="certificates" className="py-20 px-4 overflow-hidden">
+            <div className="max-w-7xl mx-auto relative z-10">
                 {/* Heading */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-purple-800 dark:from-purple-400 dark:to-purple-200 bg-clip-text text-transparent mb-3">
-                        Certifications & Achievements
+                    <h2 className="text-3xl md:text-5xl font-bold mb-3 pb-1">
+                        <span className="gradient-title-fixed">
+                            Certifications & Achievements
+                        </span>
                     </h2>
-                    <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto rounded-full mb-2"></div>
+                    <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 mx-auto rounded-full mb-2"></div>
                     <p className="text-gray-600 dark:text-gray-400">Bootcamps, Workshops & Hackathons</p>
                 </div>
 
@@ -195,7 +197,11 @@ const Certifications = () => {
                                             <div className="flex justify-between items-center mt-3 pt-3 border-t border-gray-100 dark:border-gray-700">
                                                 <div className="flex gap-1">
                                                     {cert.techStack.map((tech, i) => (
-                                                        <img key={i} src={tech} className="w-4 h-4 hover:scale-125 transition-transform" alt="Tech" title="Tech Stack" />
+                                                        tech.type === 'img' ? (
+                                                            <img key={i} src={tech.value} className="w-4 h-4 hover:scale-125 transition-transform" alt="Tech" title="Tech Stack" />
+                                                        ) : (
+                                                            <i key={i} className={`${tech.value} text-lg`} title="Tech Stack"></i>
+                                                        )
                                                     ))}
                                                 </div>
                                                 <a href={cert.link} target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-gray-50 dark:bg-gray-700 hover:bg-purple-600 text-gray-600 dark:text-gray-300 hover:text-white rounded-lg flex items-center justify-center transition-all duration-300 shadow-sm hover:shadow-purple-500/40">
@@ -221,15 +227,7 @@ const Certifications = () => {
                 </div>
             </div>
 
-            <style jsx>{`
-                .scrollbar-hide::-webkit-scrollbar {
-                    display: none;
-                }
-                .scrollbar-hide {
-                    -ms-overflow-style: none;
-                    scrollbar-width: none;
-                }
-            `}</style>
+
         </section>
     )
 }

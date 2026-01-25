@@ -94,12 +94,14 @@ const Internships = () => {
     ]
 
     return (
-        <section id="internships" className="py-20 px-4 relative">
-            <div className="max-w-7xl mx-auto">
+        <section id="internships" className="py-20 px-4 relative overflow-hidden">
+            <div className="max-w-7xl mx-auto relative z-10">
                 {/* Enhanced Heading */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-300 bg-clip-text text-transparent mb-4">
-                        Internships
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 pb-1">
+                        <span className="gradient-title-fixed">
+                            Internships
+                        </span>
                     </h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 mx-auto rounded-full mb-4"></div>
                     <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -184,15 +186,7 @@ const Internships = () => {
                 </div>
             </div>
 
-            <style jsx>{`
-                .scrollbar-hide::-webkit-scrollbar {
-                    display: none;
-                }
-                .scrollbar-hide {
-                    -ms-overflow-style: none;
-                    scrollbar-width: none;
-                }
-            `}</style>
+
         </section>
     )
 }

@@ -24,10 +24,12 @@ const Contact = () => {
 
     return (
         <section id="contact" className="py-10 px-4">
-            <div className="max-w-5xl mx-auto">
+            <div className="max-w-5xl mx-auto relative z-10">
                 <div className="text-center mb-8">
-                    <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-3">
-                        Let's Work Together
+                    <h2 className="text-3xl md:text-5xl font-bold mb-3 pb-1">
+                        <span className="gradient-title-fixed">
+                            Let's Work Together
+                        </span>
                     </h2>
                     <p className="text-base text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
                         Have a project in mind or just want to say hi? I'd love to hear from you.

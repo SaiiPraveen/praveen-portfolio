@@ -1,11 +1,13 @@
 const About = () => {
     return (
-        <section id="about" className="about-section">
-            <div className="container">
+        <section id="about" className="about-section relative">
+            <div className="container relative z-10">
                 {/* Enhanced About Me Heading */}
                 <div className="section-header">
-                    <h2 className="section-title">
-                        About Me
+                    <h2 className="text-3xl md:text-5xl font-bold mb-3 pb-1">
+                        <span className="gradient-title-fixed">
+                            About Me
+                        </span>
                     </h2>
                     <div className="section-underline"></div>
                     <p className="section-subtitle">Get to know me better</p>

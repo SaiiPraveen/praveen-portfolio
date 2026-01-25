@@ -1,24 +1,25 @@
 const Projects = () => {
     // Helper to get icon URLs
+    // Helper to get icon URLs or Classes
     const getTechIcon = (tech) => {
         const icons = {
-            'Python': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-            'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-            'Node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-            'MongoDB': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-            'Tailwind': 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg',
-            'Django': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg',
-            'PostgreSQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
-            'Pandas': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg',
-            'Scikit-learn': 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Scikit_learn_logo_small.svg',
-            'Power BI': 'https://www.svgrepo.com/show/354202/power-bi.svg',
-            'Tableau': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tableau/tableau-original.svg',
-            'SQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
-            'TensorFlow': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
-            'Plotly': 'https://upload.wikimedia.org/wikipedia/commons/3/37/Plotly-logo-01-square.png',
-            'Bokeh': 'https://static.bokeh.org/branding/icons/bokeh-icon.svg',
-            'Java': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
-            'JavaScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
+            'Python': { type: 'icon', value: 'devicon-python-plain colored' },
+            'React': { type: 'icon', value: 'devicon-react-original colored' },
+            'Node.js': { type: 'icon', value: 'devicon-nodejs-plain colored' },
+            'MongoDB': { type: 'icon', value: 'devicon-mongodb-plain colored' },
+            'Tailwind': { type: 'icon', value: 'devicon-tailwindcss-original colored' },
+            'Django': { type: 'icon', value: 'devicon-django-plain colored' },
+            'PostgreSQL': { type: 'icon', value: 'devicon-postgresql-plain colored' },
+            'Pandas': { type: 'icon', value: 'devicon-pandas-plain colored' },
+            'Scikit-learn': { type: 'icon', value: 'devicon-scikitlearn-plain colored' },
+            'Power BI': { type: 'img', value: 'https://www.svgrepo.com/show/354202/power-bi.svg' },
+            'Tableau': { type: 'icon', value: 'devicon-tableau-plain colored' },
+            'SQL': { type: 'icon', value: 'devicon-mysql-plain colored' }, // Using MySQL as generic SQL icon or find generic
+            'TensorFlow': { type: 'icon', value: 'devicon-tensorflow-original colored' },
+            'Plotly': { type: 'img', value: 'https://upload.wikimedia.org/wikipedia/commons/3/37/Plotly-logo-01-square.png' },
+            'Bokeh': { type: 'img', value: 'https://static.bokeh.org/branding/icons/bokeh-icon.svg' },
+            'Java': { type: 'icon', value: 'devicon-java-plain colored' },
+            'JavaScript': { type: 'icon', value: 'devicon-javascript-plain colored' }
         }
         return icons[tech] || icons['Python']
     }
@@ -27,7 +28,7 @@ const Projects = () => {
         {
             title: 'InternVault',
             company: 'Full Stack',
-            logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+            logo: { type: 'icon', value: 'devicon-react-original colored' },
             category: 'Web Dev',
             gradient: 'from-blue-600 to-cyan-500',
             features: [
@@ -41,7 +42,7 @@ const Projects = () => {
         {
             title: 'Travel Explorer',
             company: 'Full Stack',
-            logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+            logo: { type: 'icon', value: 'devicon-python-plain colored' },
             category: 'Web Dev',
             gradient: 'from-emerald-500 to-teal-600',
             features: [
@@ -55,7 +56,7 @@ const Projects = () => {
         {
             title: 'Uber Analysis',
             company: 'Data Analytics',
-            logo: 'https://www.svgrepo.com/show/354202/power-bi.svg',
+            logo: { type: 'img', value: 'https://www.svgrepo.com/show/354202/power-bi.svg' },
             category: 'Analytics',
             gradient: 'from-green-600 to-emerald-600',
             features: [
@@ -69,7 +70,7 @@ const Projects = () => {
         {
             title: 'Blinkit Analysis',
             company: 'Data Analytics',
-            logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+            logo: { type: 'icon', value: 'devicon-python-plain colored' },
             category: 'Analytics',
             gradient: 'from-yellow-400 to-orange-500',
             features: [
@@ -83,7 +84,7 @@ const Projects = () => {
         {
             title: 'Financial Loan',
             company: 'Data Analytics',
-            logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+            logo: { type: 'icon', value: 'devicon-mysql-plain colored' },
             category: 'Analytics',
             gradient: 'from-cyan-600 to-blue-700',
             features: [
@@ -97,7 +98,7 @@ const Projects = () => {
         {
             title: 'Healthcare Report',
             company: 'Data Analytics',
-            logo: 'https://www.svgrepo.com/show/354202/power-bi.svg',
+            logo: { type: 'img', value: 'https://www.svgrepo.com/show/354202/power-bi.svg' },
             category: 'Analytics',
             gradient: 'from-red-400 to-rose-600',
             features: [
@@ -111,7 +112,7 @@ const Projects = () => {
         {
             title: 'Airlines Analysis',
             company: 'Data Analytics',
-            logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+            logo: { type: 'icon', value: 'devicon-python-plain colored' },
             category: 'Analytics',
             gradient: 'from-sky-400 to-blue-500',
             features: [
@@ -125,7 +126,7 @@ const Projects = () => {
         {
             title: 'IPL Analysis',
             company: 'Data Analytics',
-            logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+            logo: { type: 'icon', value: 'devicon-python-plain colored' },
             category: 'Analytics',
             gradient: 'from-indigo-500 to-blue-600',
             features: [
@@ -139,7 +140,7 @@ const Projects = () => {
         {
             title: 'Bank Churn',
             company: 'Data Analytics',
-            logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+            logo: { type: 'icon', value: 'devicon-postgresql-plain colored' },
             category: 'Analytics',
             gradient: 'from-purple-600 to-indigo-700',
             features: [
@@ -153,7 +154,7 @@ const Projects = () => {
         {
             title: 'Vehicle Insurance',
             company: 'Data Analytics',
-            logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+            logo: { type: 'icon', value: 'devicon-python-plain colored' },
             category: 'Analytics',
             gradient: 'from-teal-500 to-green-600',
             features: [
@@ -167,7 +168,7 @@ const Projects = () => {
         {
             title: 'Future Sales',
             company: 'Machine Learning',
-            logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
+            logo: { type: 'icon', value: 'devicon-tensorflow-original colored' },
             category: 'ML/AI',
             gradient: 'from-fuchsia-600 to-pink-600',
             features: [
@@ -181,7 +182,7 @@ const Projects = () => {
         {
             title: 'Waiter Tip',
             company: 'Machine Learning',
-            logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+            logo: { type: 'icon', value: 'devicon-python-plain colored' },
             category: 'ML/AI',
             gradient: 'from-amber-500 to-orange-600',
             features: [
@@ -195,7 +196,7 @@ const Projects = () => {
         {
             title: 'Customer Churn',
             company: 'Machine Learning',
-            logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+            logo: { type: 'icon', value: 'devicon-python-plain colored' },
             category: 'ML/AI',
             gradient: 'from-red-500 to-orange-500',
             features: [
@@ -209,7 +210,7 @@ const Projects = () => {
         {
             title: 'Iris Classifier',
             company: 'Machine Learning',
-            logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+            logo: { type: 'icon', value: 'devicon-python-plain colored' },
             category: 'ML/AI',
             gradient: 'from-lime-500 to-green-600',
             features: [
@@ -223,7 +224,7 @@ const Projects = () => {
         {
             title: 'Dynamic Pricing',
             company: 'Algorithms',
-            logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+            logo: { type: 'icon', value: 'devicon-python-plain colored' },
             category: 'ML/AI',
             gradient: 'from-blue-500 to-indigo-500',
             features: [
@@ -237,7 +238,7 @@ const Projects = () => {
         {
             title: 'Superstore Analysis',
             company: 'Data Analytics',
-            logo: 'https://static.bokeh.org/branding/icons/bokeh-icon.svg',
+            logo: { type: 'img', value: 'https://static.bokeh.org/branding/icons/bokeh-icon.svg' },
             category: 'Analytics',
             gradient: 'from-purple-500 to-blue-500',
             features: [
@@ -251,7 +252,7 @@ const Projects = () => {
         {
             title: 'Climate Analysis',
             company: 'Data Analytics',
-            logo: 'https://upload.wikimedia.org/wikipedia/commons/3/37/Plotly-logo-01-square.png',
+            logo: { type: 'img', value: 'https://upload.wikimedia.org/wikipedia/commons/3/37/Plotly-logo-01-square.png' },
             category: 'Analytics',
             gradient: 'from-cyan-400 to-blue-500',
             features: [
@@ -265,14 +266,16 @@ const Projects = () => {
     ]
 
     return (
-        <section id="projects" className="py-20 px-4 relative">
-            <div className="max-w-7xl mx-auto">
+        <section id="projects" className="py-20 px-4 relative overflow-hidden">
+            <div className="max-w-7xl mx-auto relative z-10">
                 {/* Heading */}
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-purple-800 dark:from-purple-400 dark:to-purple-200 bg-clip-text text-transparent mb-4">
-                        Featured Projects
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 pb-1">
+                        <span className="gradient-title-fixed">
+                            Featured Projects
+                        </span>
                     </h2>
-                    <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto rounded-full mb-4"></div>
+                    <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 mx-auto rounded-full mb-4"></div>
                     <p className="text-gray-600 dark:text-gray-400 py-4">Innovative solutions showcasing technical expertise</p>
                 </div>
 
@@ -287,7 +290,11 @@ const Projects = () => {
                                     {/* Project Header with Logo */}
                                     <div className={`h-32 bg-gradient-to-br ${project.gradient} relative overflow-hidden shrink-0`}>
                                         <div className="absolute inset-0 flex items-center justify-center">
-                                            <img src={project.logo} alt={project.title} className="w-16 h-16 object-contain filter drop-shadow-lg" />
+                                            {project.logo.type === 'img' ? (
+                                                <img src={project.logo.value} alt={project.title} className="w-16 h-16 object-contain filter drop-shadow-lg" />
+                                            ) : (
+                                                <i className={`${project.logo.value} text-5xl text-white drop-shadow-lg`}></i>
+                                            )}
                                         </div>
                                         <div className="absolute top-3 right-3">
                                             <span className={`bg-white/90 text-${project.gradient.split('-')[1]}-700 px-2 py-1 rounded-xl text-xs font-medium`}>
@@ -317,7 +324,11 @@ const Projects = () => {
                                         <div className="flex items-center gap-2 mb-4 h-6 mt-auto">
                                             <div className="flex gap-1">
                                                 {project.techStack.map((tech, i) => (
-                                                    <img key={i} src={tech} className="w-5 h-5" alt="Tech" title="Technology" />
+                                                    tech.type === 'img' ? (
+                                                        <img key={i} src={tech.value} className="w-5 h-5" alt="Tech" title="Technology" />
+                                                    ) : (
+                                                        <i key={i} className={`${tech.value} text-xl`} title="Technology"></i>
+                                                    )
                                                 ))}
                                             </div>
                                         </div>
@@ -349,15 +360,7 @@ const Projects = () => {
                 </div>
             </div>
 
-            <style jsx>{`
-                .scrollbar-hide::-webkit-scrollbar {
-                    display: none;
-                }
-                .scrollbar-hide {
-                    -ms-overflow-style: none;
-                    scrollbar-width: none;
-                }
-            `}</style>
+
         </section>
     )
 }

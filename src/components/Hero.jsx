@@ -109,8 +109,8 @@ const Hero = () => {
             <div className="relative z-10 text-center max-w-4xl mx-auto">
 
                 {/* Name */}
-                <h1 className="text-5xl md:text-7xl font-extrabold mb-6 animate-fade-in-up animation-delay-300 tracking-tight font-['Playfair_Display']">
-                    I'm <span className="bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent bg-300% animate-gradient">Sai Srinivas Raghu Praveen</span>
+                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-fade-in-up animation-delay-300 tracking-tight font-['Playfair_Display'] w-full break-words px-2">
+                    hi!    I'm <span className="bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent bg-300% animate-gradient inline-block">Sai Srinivas Raghu Praveen</span>
                 </h1>
 
                 {/* Role */}
@@ -125,7 +125,7 @@ const Hero = () => {
 
                 {/* Buttons */}
                 <div className="flex flex-wrap justify-center gap-4 animate-fade-in-up animation-delay-900">
-                    <a href="resume.pdf" className="group relative px-8 py-3 bg-purple-600 text-white rounded-xl font-semibold shadow-lg shadow-purple-500/30 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-purple-500/50">
+                    <a href="resume.pdf" className="group relative px-6 md:px-8 py-3 bg-purple-600 text-white rounded-xl font-semibold shadow-lg shadow-purple-500/30 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-purple-500/50">
                         <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
                         <span className="flex items-center gap-2">
                             <i className="fas fa-file-alt"></i>
@@ -133,7 +133,7 @@ const Hero = () => {
                         </span>
                     </a>
 
-                    <a href="#contact" className="px-8 py-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 rounded-xl font-semibold shadow-md transition-all duration-300 hover:scale-105 hover:border-purple-500 hover:text-purple-600 dark:hover:text-purple-400 flex items-center gap-2">
+                    <a href="#contact" className="px-6 md:px-8 py-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 rounded-xl font-semibold shadow-md transition-all duration-300 hover:scale-105 hover:border-purple-500 hover:text-purple-600 dark:hover:text-purple-400 flex items-center gap-2">
                         <i className="fas fa-paper-plane"></i>
                         Contact Me
                     </a>

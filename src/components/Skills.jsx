@@ -1,37 +1,37 @@
 const Skills = () => {
     const languagesAndDb = [
-        { name: 'Python', icon: 'fab fa-python', color: 'text-blue-500' },
-        { name: 'C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg', isImage: true },
-        { name: 'HTML5', icon: 'fab fa-html5', color: 'text-orange-500' },
-        { name: 'CSS3', icon: 'fab fa-css3-alt', color: 'text-blue-500' },
-        { name: 'JavaScript', icon: 'fab fa-js', color: 'text-yellow-400' },
-        { name: 'C#', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg', isImage: true },
-        { name: 'R', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg', isImage: true },
-        { name: 'Java', icon: 'fab fa-java', color: 'text-red-600' },
-        { name: 'MySQL', icon: 'fas fa-database', color: 'text-blue-600' },
-        { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg', isImage: true },
+        { name: 'Python', icon: 'devicon-python-plain colored' },
+        { name: 'C', icon: 'devicon-c-plain colored' },
+        { name: 'HTML5', icon: 'devicon-html5-plain colored' },
+        { name: 'CSS3', icon: 'devicon-css3-plain colored' },
+        { name: 'JavaScript', icon: 'devicon-javascript-plain colored' },
+        { name: 'C#', icon: 'devicon-csharp-plain colored' },
+        { name: 'R', icon: 'devicon-r-plain colored' },
+        { name: 'Java', icon: 'devicon-java-plain colored' },
+        { name: 'MySQL', icon: 'devicon-mysql-plain colored' },
+        { name: 'MongoDB', icon: 'devicon-mongodb-plain colored' },
     ]
 
     const frameworksAndLibs = [
-        { name: 'Pandas', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg', isImage: true },
-        { name: 'NumPy', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg', isImage: true },
-        { name: 'Matplotlib', icon: 'fas fa-chart-bar', color: 'text-orange-400' },
+        { name: 'Pandas', icon: 'devicon-pandas-plain colored' },
+        { name: 'NumPy', icon: 'devicon-numpy-plain colored' },
+        { name: 'Matplotlib', icon: 'devicon-matplotlib-plain colored' },
         { name: 'Seaborn', icon: 'fas fa-chart-area', color: 'text-blue-300' },
-        { name: 'Scikit-learn', icon: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg', isImage: true },
-        { name: 'Flask', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg', isImage: true },
-        { name: 'React.js', icon: 'fab fa-react', color: 'text-blue-400' },
-        { name: 'Node.js', icon: 'fab fa-node-js', color: 'text-green-500' },
-        { name: 'Express.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg', isImage: true },
-        { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg', isImage: true },
+        { name: 'Scikit-learn', icon: 'devicon-scikitlearn-plain colored' },
+        { name: 'Flask', icon: 'devicon-flask-original colored' },
+        { name: 'React.js', icon: 'devicon-react-original colored' },
+        { name: 'Node.js', icon: 'devicon-nodejs-plain colored' },
+        { name: 'Express.js', icon: 'devicon-express-original' }, // express-original has no colored version usually, it is just black/white
+        { name: 'Tailwind CSS', icon: 'devicon-tailwindcss-original colored' },
     ]
 
     const toolsAndIde = [
         { name: 'Power BI', icon: 'fas fa-chart-pie', color: 'text-yellow-500' },
-        { name: 'Tableau', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tableau/tableau-original.svg', isImage: true },
+        { name: 'Tableau', icon: 'devicon-tableau-plain colored' },
         { name: 'Excel', icon: 'fas fa-file-excel', color: 'text-green-600' },
         { name: 'Alteryx', icon: 'fas fa-cogs', color: 'text-blue-400' },
-        { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg', isImage: true },
-        { name: 'Jupyter', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg', isImage: true },
+        { name: 'VS Code', icon: 'devicon-vscode-plain colored' },
+        { name: 'Jupyter', icon: 'devicon-jupyter-plain colored' },
         { name: 'Google Colab', icon: 'https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg', isImage: true },
     ]
 
@@ -40,8 +40,8 @@ const Skills = () => {
             <div className="max-w-6xl mx-auto relative z-10">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                        <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 pb-1">
+                        <span className="gradient-title-fixed">
                             Technical Skills
                         </span>
                     </h2>
@@ -64,7 +64,7 @@ const Skills = () => {
                                     {skill.isImage ? (
                                         <img src={skill.icon} alt={skill.name} className="w-5 h-5" />
                                     ) : (
-                                        <i className={`${skill.icon} ${skill.color} text-lg`}></i>
+                                        <i className={`${skill.icon} ${skill.color || ''} text-lg`}></i>
                                     )}
                                     <span className="text-gray-700 dark:text-gray-300">{skill.name}</span>
                                 </div>
@@ -84,7 +84,7 @@ const Skills = () => {
                                     {skill.isImage ? (
                                         <img src={skill.icon} alt={skill.name} className="w-5 h-5" />
                                     ) : (
-                                        <i className={`${skill.icon} ${skill.color} text-lg`}></i>
+                                        <i className={`${skill.icon} ${skill.color || ''} text-lg`}></i>
                                     )}
                                     <span className="text-gray-700 dark:text-gray-300">{skill.name}</span>
                                 </div>
@@ -104,7 +104,7 @@ const Skills = () => {
                                     {skill.isImage ? (
                                         <img src={skill.icon} alt={skill.name} className="w-5 h-5" />
                                     ) : (
-                                        <i className={`${skill.icon} ${skill.color} text-lg`}></i>
+                                        <i className={`${skill.icon} ${skill.color || ''} text-lg`}></i>
                                     )}
                                     <span className="text-gray-700 dark:text-gray-300">{skill.name}</span>
                                 </div>

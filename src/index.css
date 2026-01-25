@@ -73,6 +73,12 @@ body.dark .app-container {
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
 }
 
 section {
@@ -136,6 +142,24 @@ section {
     100% {
         background-position: 0% 50%;
     }
+}
+
+.gradient-title-fixed {
+    background: linear-gradient(to right, var(--purple-600), #4f46e5);
+    /* purple-600 to indigo-600 hex for safety */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+body.dark .gradient-title-fixed {
+    background: linear-gradient(to right, var(--purple-400), #818cf8);
+    /* purple-400 to indigo-400 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .animate-gradient {
@@ -622,7 +646,8 @@ body.dark .section-subtitle {
 }
 
 .about-image-wrapper {
-    width: 20rem;
+    width: 100%;
+    max-width: 20rem;
     min-height: 25rem;
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(24px);
@@ -1745,4 +1770,21 @@ body.dark .footer-link.back-to-top {
 
 body.dark .footer-link.back-to-top:hover {
     color: var(--purple-300);
+}
+
+/* Scrollbar Hiding Utilities */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Responsive Section Titles */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem !important;
+    }
 }
