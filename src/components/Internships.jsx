@@ -94,11 +94,11 @@ const Internships = () => {
     ]
 
     return (
-        <section id="internships" className="py-20 px-4 relative overflow-hidden">
-            <div className="max-w-7xl mx-auto relative z-10">
+        <section id="internships" className="py-20 px-4 relative overflow-hidden w-full max-w-[100vw]">
+            <div className="max-w-6xl mx-auto relative z-10 max-w-[100vw]" style={{ maxWidth: '100vw' }}>
                 {/* Enhanced Heading */}
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4 pb-1">
+                    <h2 className="text-2xl md:text-5xl font-bold mb-4 pb-1 break-words whitespace-normal">
                         <span className="gradient-title-fixed">
                             Internships
                         </span>
@@ -110,7 +110,7 @@ const Internships = () => {
                 </div>
 
                 {/* Carousel Container */}
-                <div className="relative group/container">
+                <div className="relative group/container w-full" style={{ maxWidth: '100vw', overflow: 'hidden' }}>
                     {/* Scroll Container */}
                     <div className="flex overflow-x-auto gap-6 pb-12 snap-x snap-mandatory scrollbar-hide px-4 md:px-0">
                         {internships.map((internship, index) => (

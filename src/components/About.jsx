@@ -1,3 +1,5 @@
+import profilePic from '../files/pic.png'
+
 const About = () => {
     return (
         <section id="about" className="about-section relative">
@@ -16,7 +18,7 @@ const About = () => {
                 <div className="about-content">
                     <div className="about-image-container">
                         <div className="about-image-wrapper">
-                            <img src="https://i.pravatar.cc/600" alt="Profile Photo" />
+                            <img src={profilePic} alt="Praveen Profile Photo" />
                         </div>
                     </div>
 

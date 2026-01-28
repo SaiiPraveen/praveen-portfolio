@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import resumePDF from '../files/resume.pdf'
 
 const Hero = () => {
     useEffect(() => {
@@ -125,7 +126,13 @@ const Hero = () => {
 
                 {/* Buttons */}
                 <div className="flex flex-wrap justify-center gap-4 animate-fade-in-up animation-delay-900">
-                    <a href="resume.pdf" className="group relative px-6 md:px-8 py-3 bg-purple-600 text-white rounded-xl font-semibold shadow-lg shadow-purple-500/30 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-purple-500/50">
+                    <a
+                        href={resumePDF}
+                        download="Praveen_Resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative px-6 md:px-8 py-3 bg-purple-600 text-white rounded-xl font-semibold shadow-lg shadow-purple-500/30 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-purple-500/50"
+                    >
                         <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
                         <span className="flex items-center gap-2">
                             <i className="fas fa-file-alt"></i>
@@ -141,13 +148,13 @@ const Hero = () => {
 
                 {/* Social Links */}
                 <div className="mt-12 flex justify-center gap-6 animate-fade-in-up animation-delay-1000">
-                    <a href="https://www.linkedin.com/in/sai-srinivas-raghu-praveen-katta-833794270     " className="w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-full flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-110 hover:shadow-lg transition-all duration-300 text-xl border border-gray-200 dark:border-gray-700">
+                    <a href="https://www.linkedin.com/in/sai-srinivas-raghu-praveen-katta-833794270" target="_blank" className="w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-full flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-110 hover:shadow-lg transition-all duration-300 text-xl border border-gray-200 dark:border-gray-700">
                         <i className="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://github.com/saipraveen13?tab=repositories" className="w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-full flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:scale-110 hover:shadow-lg transition-all duration-300 text-xl border border-gray-200 dark:border-gray-700">
+                    <a href="https://github.com/saipraveen13?tab=repositories" target="_blank" className="w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-full flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:scale-110 hover:shadow-lg transition-all duration-300 text-xl border border-gray-200 dark:border-gray-700">
                         <i className="fab fa-github"></i>
                     </a>
-                    <a href="#" className="w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-full flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-blue-400 hover:scale-110 hover:shadow-lg transition-all duration-300 text-xl border border-gray-200 dark:border-gray-700">
+                    <a href="https://www.x.com/Praveen62839571" target="_blank" className="w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-full flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-blue-400 hover:scale-110 hover:shadow-lg transition-all duration-300 text-xl border border-gray-200 dark:border-gray-700">
                         <i className="fab fa-twitter"></i>
                     </a>
                 </div>

@@ -120,11 +120,11 @@ const Certifications = () => {
         : certificates.filter(cert => cert.category === filter)
 
     return (
-        <section id="certificates" className="py-20 px-4 overflow-hidden">
-            <div className="max-w-7xl mx-auto relative z-10">
+        <section id="certificates" className="py-20 px-4 relative overflow-hidden w-full max-w-[100vw]">
+            <div className="max-w-6xl mx-auto relative z-10 max-w-[100vw]" style={{ maxWidth: '100vw' }}>
                 {/* Heading */}
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-3 pb-1">
+                <div className="text-center mb-16">
+                    <h2 className="text-2xl md:text-5xl font-bold mb-4 pb-1 break-words whitespace-normal">
                         <span className="gradient-title-fixed">
                             Certifications & Achievements
                         </span>
@@ -141,7 +141,7 @@ const Certifications = () => {
                             onClick={() => setFilter(cat)}
                             className={`filter-btn px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 capitalize ${filter === cat
                                 ? 'active bg-purple-600 text-white shadow-lg shadow-purple-500/30 ring-2 ring-purple-400 ring-offset-2 dark:ring-offset-gray-900'
-                                : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700'
+                                : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 hover:text-gray-900 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700'
                                 }`}
                         >
                             {cat === 'all' ? 'All Certificates' : cat + 's'}
@@ -150,11 +150,11 @@ const Certifications = () => {
                 </div>
 
                 {/* Carousel Container */}
-                <div className="relative group/container">
+                <div className="relative group/container w-full" style={{ maxWidth: '100vw', overflow: 'hidden' }}>
                     {/* Scroll Container */}
                     <div className="flex overflow-x-auto gap-6 pb-12 snap-x snap-mandatory scrollbar-hide px-4 md:px-0">
                         {filteredCertificates.map((cert, index) => (
-                            <div key={index} className="min-w-[300px] md:min-w-[360px] snap-center first:pl-4 last:pr-4">
+                            <div key={index} className="min-w-[85vw] md:min-w-[360px] snap-center first:pl-4 last:pr-4">
                                 <div className="certificate-card group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:-translate-y-1 h-full">
                                     <div className="flex h-full">
                                         {/* Company Image Side */}
@@ -179,8 +179,8 @@ const Certifications = () => {
                                         {/* Certificate Details Side */}
                                         <div className="w-3/5 p-4 flex flex-col justify-between">
                                             <div>
-                                                <h3 className="text-sm font-bold text-gray-800 dark:text-white mb-1 leading-tight line-clamp-2" title={cert.title}>{cert.title}</h3>
-                                                <p className="text-[11px] text-purple-600 dark:text-purple-400 mb-3 font-medium uppercase tracking-wider">{cert.organization}</p>
+                                                <h3 className="text-sm font-bold text-gray-800 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white mb-1 leading-tight line-clamp-2" title={cert.title}>{cert.title}</h3>
+                                                <p className="text-[11px] text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300 mb-3 font-medium uppercase tracking-wider">{cert.organization}</p>
 
                                                 <div className="flex flex-wrap items-center gap-2 mb-3">
                                                     <span className={`${cert.category === 'bootcamp' ? 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300' : cert.category === 'workshop' ? 'bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300' : 'bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300'} px-2 py-0.5 rounded-full text-[10px] font-medium border border-transparent`}>

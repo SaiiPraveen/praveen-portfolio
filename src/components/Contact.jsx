@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -7,12 +8,37 @@ const Contact = () => {
         subject: '',
         message: ''
     })
+    const [isSending, setIsSending] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('Form submitted:', formData)
-        alert('Message sent successfully!')
-        setFormData({ name: '', email: '', subject: '', message: '' })
+        setIsSending(true)
+
+        // EMAILJS CONFIGURATION
+        const serviceId = 'service_969e4s7'
+        const templateId = 'template_xt44mbw'
+        const publicKey = 'rIjks66WsxSVv6kce'
+
+        const templateParams = {
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message
+        }
+
+        emailjs.send(serviceId, templateId, templateParams, publicKey)
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text)
+                alert('Message sent successfully!')
+                setFormData({ name: '', email: '', subject: '', message: '' })
+            })
+            .catch((err) => {
+                console.log('FAILED...', err)
+                alert('Failed to send message. Please try again later or contact me directly via email.')
+            })
+            .finally(() => {
+                setIsSending(false)
+            })
     }
 
     const handleChange = (e) => {
@@ -56,7 +82,9 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <p className="text-purple-200 text-xs uppercase tracking-wider font-semibold">Phone</p>
-                                        <p className="font-medium text-sm">+91 98765 43210</p>
+                                        <p className="font-medium text-sm">+91 
+                                            <span className="text-gray-200"> 7013640945</span>   
+                                        </p>
                                     </div>
                                 </div>
 
@@ -66,7 +94,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <p className="text-purple-200 text-xs uppercase tracking-wider font-semibold">Email</p>
-                                        <p className="font-medium text-sm">praveen@email.com</p>
+                                        <p className="font-medium text-sm">saikatta07@gmail.com</p>
                                     </div>
                                 </div>
 
@@ -76,7 +104,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <p className="text-purple-200 text-xs uppercase tracking-wider font-semibold">Location</p>
-                                        <p className="font-medium text-sm">Visakhapatnam, India</p>
+                                        <p className="font-medium text-sm">Amalapuram, India</p>
                                     </div>
                                 </div>
                             </div>
@@ -85,13 +113,13 @@ const Contact = () => {
                         <div className="relative z-10 mt-8">
                             <p className="text-purple-200 text-xs mb-3 uppercase tracking-wider font-semibold">Follow Me</p>
                             <div className="flex gap-3">
-                                <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-purple-700 transition-all duration-300">
+                                <a href="https://www.linkedin.com/in/sai-srinivas-raghu-praveen-katta-833794270"    target="_blank" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-purple-700 transition-all duration-300">
                                     <i className="fab fa-linkedin-in text-xs"></i>
                                 </a>
-                                <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-purple-700 transition-all duration-300">
+                                <a href="https://github.com/saipraveen13?tab=repositories" target="_blank" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-purple-700 transition-all duration-300">
                                     <i className="fab fa-github text-xs"></i>
                                 </a>
-                                <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-purple-700 transition-all duration-300">
+                                <a href="https://www.x.com/Praveen62839571" target="_blank" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-purple-700 transition-all duration-300">
                                     <i className="fab fa-twitter text-xs"></i>
                                 </a>
                             </div>
@@ -150,9 +178,19 @@ const Contact = () => {
                                 ></textarea>
                             </div>
 
-                            <button type="submit" className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg shadow-md hover:shadow-purple-500/30 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 text-sm">
-                                <span>Send Message</span>
-                                <i className="fa-solid fa-paper-plane"></i>
+                            <button
+                                type="submit"
+                                disabled={isSending}
+                                className={`w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg shadow-md hover:shadow-purple-500/30 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 text-sm ${isSending ? 'opacity-70 cursor-not-allowed' : ''}`}
+                            >
+                                {isSending ? (
+                                    <span>Sending...</span>
+                                ) : (
+                                    <>
+                                        <span>Send Message</span>
+                                        <i className="fa-solid fa-paper-plane"></i>
+                                    </>
+                                )}
                             </button>
                         </form>
                     </div>

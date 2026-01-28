@@ -44,13 +44,28 @@
     --yellow-500: #eab308;
 }
 
+html,
+body,
+#root {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--gray-50);
+    background-color: var(--purple-50);
     color: var(--gray-900);
     transition: background-color 0.3s, color 0.3s;
 }
@@ -61,24 +76,17 @@ body.dark {
 }
 
 .app-container {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
     background: linear-gradient(to bottom right, white, #faf5ff);
     color: var(--gray-900);
     transition: background 0.5s, color 0.5s;
 }
 
 body.dark .app-container {
-    background: linear-gradient(to bottom right, black, #581c87);
+    background: linear-gradient(to bottom right, black, #1a0b2e);
     color: white;
-}
-
-html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-}
-
-body {
-    overflow-x: hidden;
-    width: 100%;
 }
 
 section {
@@ -86,6 +94,8 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    overflow-x: hidden;
 }
 
 /* Custom Animations */
@@ -145,22 +155,30 @@ section {
 }
 
 .gradient-title-fixed {
-    background: linear-gradient(to right, var(--purple-600), #4f46e5);
-    /* purple-600 to indigo-600 hex for safety */
+    display: block;
+    background: linear-gradient(to right, #9333ea, #4f46e5);
     -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
     -webkit-text-fill-color: transparent;
-    display: inline-block;
+    background-clip: text;
+    color: #9333ea;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.3;
+    padding-bottom: 0.1em;
 }
 
 body.dark .gradient-title-fixed {
-    background: linear-gradient(to right, var(--purple-400), #818cf8);
-    /* purple-400 to indigo-400 */
+    background: linear-gradient(to right, #c084fc, #818cf8);
     -webkit-background-clip: text;
-    background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
+
 
 .animate-gradient {
     animation: gradient 3s ease infinite;
