@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
+import toast, { Toaster } from 'react-hot-toast'
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -29,12 +30,38 @@ const Contact = () => {
         emailjs.send(serviceId, templateId, templateParams, publicKey)
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text)
-                alert('Message sent successfully!')
+                toast.success('Message sent successfully! 🎉', {
+                    duration: 4000,
+                    position: 'top-center',
+                    style: {
+                        background: '#9333ea',
+                        color: '#fff',
+                        padding: '16px',
+                        borderRadius: '10px',
+                        fontSize: '14px',
+                        fontWeight: '600',
+                    },
+                    iconTheme: {
+                        primary: '#fff',
+                        secondary: '#9333ea',
+                    },
+                })
                 setFormData({ name: '', email: '', subject: '', message: '' })
             })
             .catch((err) => {
                 console.log('FAILED...', err)
-                alert('Failed to send message. Please try again later or contact me directly via email.')
+                toast.error('Failed to send message. Please try again or email me directly.', {
+                    duration: 5000,
+                    position: 'top-center',
+                    style: {
+                        background: '#ef4444',
+                        color: '#fff',
+                        padding: '16px',
+                        borderRadius: '10px',
+                        fontSize: '14px',
+                        fontWeight: '600',
+                    },
+                })
             })
             .finally(() => {
                 setIsSending(false)
@@ -82,8 +109,8 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <p className="text-purple-200 text-xs uppercase tracking-wider font-semibold">Phone</p>
-                                        <p className="font-medium text-sm">+91 
-                                            <span className="text-gray-200"> 7013640945</span>   
+                                        <p className="font-medium text-sm">+91
+                                            <span className="text-gray-200"> 7013640945</span>
                                         </p>
                                     </div>
                                 </div>
@@ -113,7 +140,7 @@ const Contact = () => {
                         <div className="relative z-10 mt-8">
                             <p className="text-purple-200 text-xs mb-3 uppercase tracking-wider font-semibold">Follow Me</p>
                             <div className="flex gap-3">
-                                <a href="https://www.linkedin.com/in/sai-srinivas-raghu-praveen-katta-833794270"    target="_blank" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-purple-700 transition-all duration-300">
+                                <a href="https://www.linkedin.com/in/sai-srinivas-raghu-praveen-katta-833794270" target="_blank" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-purple-700 transition-all duration-300">
                                     <i className="fab fa-linkedin-in text-xs"></i>
                                 </a>
                                 <a href="https://github.com/saipraveen13?tab=repositories" target="_blank" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-purple-700 transition-all duration-300">
@@ -196,6 +223,9 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Toast Notifications */}
+            <Toaster />
         </section>
     )
 }
